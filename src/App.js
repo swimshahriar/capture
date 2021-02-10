@@ -5,6 +5,7 @@ import Globalstyle from "./components/GlobalStyle";
 import Nav from "./components/Nav";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import MovieDetail from "./pages/MovieDetail";
 import OurWork from "./pages/OurWork";
 
 const App = () => {
@@ -19,7 +20,10 @@ const App = () => {
         <Route path="/work" exact>
           <OurWork />
         </Route>
-        <Route path="/contact" exact>
+        <Route path="/work/:id">
+          <MovieDetail />
+        </Route>
+        <Route path="/contact">
           <ContactUs />
         </Route>
       </Switch>
