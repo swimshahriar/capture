@@ -19,7 +19,13 @@ import ScrollTop from "../components/ScrollTop";
 
 const OurWork = () => {
   return (
-    <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+    <Work
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      style={{ background: "#fff" }}
+    >
       <ScrollTop />
       <motion.div variants={sliderContainer}>
         <Frame1 variants={sliderAnim}></Frame1>
@@ -58,7 +64,9 @@ const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
-  background: white;
+  @media (max-width: 1300px) {
+    padding: 2rem 2rem;
+  }
 
   h2 {
     padding: 1rem 0rem;
