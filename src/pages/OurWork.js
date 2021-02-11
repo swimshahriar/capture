@@ -15,10 +15,12 @@ import {
   sliderAnim,
   sliderContainer,
 } from "../animation";
+import ScrollTop from "../components/ScrollTop";
 
 const OurWork = () => {
   return (
     <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+      <ScrollTop />
       <motion.div variants={sliderContainer}>
         <Frame1 variants={sliderAnim}></Frame1>
         <Frame2 variants={sliderAnim}></Frame2>

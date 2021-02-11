@@ -15,6 +15,7 @@ const App = () => {
   return (
     <>
       <Globalstyle />
+
       <Nav />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
