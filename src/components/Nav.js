@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Nav = () => {
+  const { pathname } = useLocation();
+
   return (
     <StyledNav>
       <h1>
@@ -13,12 +16,27 @@ const Nav = () => {
       <ul>
         <li>
           <NavLink to="/">1. About Us</NavLink>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/" ? "50%" : "0%" }}
+          ></Line>
         </li>
         <li>
           <NavLink to="/work">2. Our Work</NavLink>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/work" ? "50%" : "0%" }}
+          ></Line>
         </li>
         <li>
           <NavLink to="/contact">3. Contact Us</NavLink>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
+          ></Line>
         </li>
       </ul>
     </StyledNav>
@@ -69,6 +87,18 @@ const StyledNav = styled.nav`
         padding: 0;
       }
     }
+  }
+`;
+
+const Line = styled(motion.div)`
+  height: 0.3rem;
+  width: 0%;
+  background: #23d997;
+  position: absolute;
+  bottom: -80%;
+  left: 60%;
+  @media (max-width: 1300px) {
+    left: 0;
   }
 `;
 
